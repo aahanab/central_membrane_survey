@@ -8,7 +8,7 @@ Original file is located at
 """
 #Please run the following dependencies before running the main code.
 # If you hover over any part of the image and click on it, it prints out the coordinates as pixel coordinates 
-# You may chpoose a more specifi location (like the center of the survey mark) by click on a surrounding area, and it will zoom in. 
+# You may choose a more specific location (like the center of the survey mark) by click on a surrounding area, and it will zoom in. 
 # Then you can go ahead and click on it and it prints out the pixel coord.
 
 #####################################################
