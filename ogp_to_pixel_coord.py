@@ -7,6 +7,11 @@ Original file is located at
     https://colab.research.google.com/drive/1vGAAhjZjA09vXVll4eWVk8ZYzqXXl9Kz
 """
 
+# This code is one of the main ones. This code finds the transformation matrix given the survey marks in both pixel and OGP coordinates. 
+# Then you need to give it the full text files containing the coordinates of all the OGP stripes and it outputs 2 files
+# First file contains all the transformation stuff: scaling, translation, and rotation matrix
+# Second file contains all the coordinate sthat have been transformed in puixel coordinates. 
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import interpolate
@@ -33,12 +38,17 @@ def read_coordinates(file_path):
     # Return the coordinates as a NumPy matrix
     return np.matrix(coordinates)
 
+#################################################
+# Put in the foolowing text files here: B is the 4 survey coordinates in OGP coordinates
+# And A is the 4 survey marks coordinates in pixel coordinates
+
 # Read the coordinates of B from a text file
 B = read_coordinates('OGP_survey_marks.txt')
 
 # Read the coordinates of A from a text file
 A = read_coordinates('pixel_survey_marks.txt')
 
+###################################################
 
 scaling = True
 
@@ -136,7 +146,7 @@ match_target[3,3] = 1
 
 # Open the file in write mode and output the information in text files. 
 # One text file is output1 which only stores the transformation info
-# Second tect file is output2 which stores all the transformed pixel coordiniates to plot on the image later. 
+# This part outputs all the transformation matrix into a text file called output_transforms.txt
 
 
 with open('output_transforms.txt', 'w') as f:
@@ -174,6 +184,7 @@ with open('output_transforms.txt', 'w') as f:
     f.write(" ".join([f"{element:>10.4f}" for element in row]) + "\n")
     
 ############################################################################################################
+# This part outputs all the transformed pixel coordinates 
 
 with open('output_transformed_pixelcoord.txt', 'w') as f:
   
