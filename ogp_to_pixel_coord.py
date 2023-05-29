@@ -10,7 +10,7 @@ Original file is located at
 # This code is one of the main ones. This code finds the transformation matrix given the survey marks in both pixel and OGP coordinates. 
 # Then you need to give it the full text files containing the coordinates of all the OGP stripes and it outputs 2 files
 # First file contains all the transformation stuff: scaling, translation, and rotation matrix
-# Second file contains all the coordinate sthat have been transformed in puixel coordinates. 
+# Second file contains all the coordinate sthat have been transformed in pixel coordinates. 
 
 import numpy as np
 import matplotlib.pyplot as plt
