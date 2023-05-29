@@ -26,7 +26,7 @@ def read_coordinates(file_path):
     with open(file_path, 'r') as file:
         # Read each line of the file
         for line in file:
-            # Skip empty lines or lines that do not contain three values 
+            # Skip empty lines or lines that do not contain three values (each line has to have a x,y,z value) 
             if not line.strip() or len(line.strip().split(',')) != 3:
                 continue
             # Split the line by whitespace to get the x, y, and z coordinates
@@ -52,11 +52,8 @@ A = read_coordinates('pixel_survey_marks.txt')
 
 scaling = True
 
-# Implements Kabsch algorithm  
-# Input:
-#     Nominal  A Nx3 matrix of points
-#     Measured B Nx3 matrix of points
-# Returns s,R,t
+# Implements Kabsch algorithm 
+# Returns s,R,t (scaling, rotation, translation)
 # s = scale B to A
 # R = 3x3 rotation matrix (B to A)
 # t = 3x1 translation vector (B to A)
@@ -110,8 +107,8 @@ n = B.shape[0]
 
 s, ret_R, ret_t = transform_3D(A, B, scaling)
 
-# Read the coordinates of OGP_2.txt which has all the coordinates. It has x,y,z comma seperated and z is set to 0. 
-#If it is an integer, put a .0 after it since it only reads float.
+# Read the coordinates of OGP_all_coord.txt which has all the coordinates. It has x,y,z comma seperated and z is set to 0. 
+# If it is an integer, put a .0 after it since it only reads float.
 
 coordinates = read_coordinates('OGP_all_coord.txt')
 
