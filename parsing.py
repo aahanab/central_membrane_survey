@@ -8,8 +8,8 @@ Original file is located at
 """
 
 # use this code
-# Parsing code: Fixing the data from https://github.com/rccorliss/tpc_alignment_data/OGP into a text file with each line representing a survey mark or petal
-# The first 4 lines are always survey marks, the rest is petals. It is comma seperated x,y,z and z is always set to 0.
+# Parsing code: Fixing the data from https://github.com/rccorliss/tpc_alignment_data/OGP into a text file with each line representing a survey mark or stripes
+# The first 4 lines are always survey marks, the rest is stripes. It is comma seperated x,y,z and z is always set to 0.
 
 def parse_coordinates(petal_54):
     output_text = ''
