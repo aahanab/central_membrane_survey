@@ -21,7 +21,7 @@ def draw_bounding_boxes(image, points, lengths, widths):
     return result
 
 # Load the image
-image = cv2.imread("petal_54.jpg")
+image = cv2.imread("petal_54.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Load the points from the text file
 points = []
