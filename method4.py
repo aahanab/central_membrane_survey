@@ -57,7 +57,7 @@ def calculate_pixel_histograms_old_4(image, points, lengths, widths, threshold=5
     return histograms
 
 # Load the image
-image = cv2.imread("petal_54.jpg")
+image = cv2.imread("petal_54.jpg", cv2.IMREAD_GRAYSCALE)
 
 # Load the points from the text file
 points = []
@@ -172,7 +172,7 @@ def calculate_pixel_histograms_new_4(image, points, lengths, widths, threshold=5
 # IMPORTANT NOTE: Lengths and widths of the boxes have been altered
 
 # Load the image
-image = cv2.imread("petal_54.jpg")
+image = cv2.imread("petal_54.jpg" , cv2.IMREAD_GRAYSCALE)
 
 # Load the points from the text file
 points = []
